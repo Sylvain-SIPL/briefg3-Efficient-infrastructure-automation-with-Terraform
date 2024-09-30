@@ -1,0 +1,21 @@
+      #!/usr/bin/expect
+      spawn sudo mysql_secure_installation
+      expect "Enter current password for root (enter for none):"
+      send "\r"
+      expect "Switch to unix_socket authentication"
+      send "Y\r"
+      expect "Change root password?"
+      send "Y\r"
+      expect "New password:"
+      send "root123\r"
+      expect "Re-enter new password:"
+      send "root123\r"
+      expect "Remove anonymous users?"
+      send "Y\r"
+      expect "Disallow root login remotely?"
+      send "N\r"
+      expect "Remove test database and access to it?"
+      send "Y\r"
+      expect "Reload privilege tables now?"
+      send "Y\r"
+      expect eof
